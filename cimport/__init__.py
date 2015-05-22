@@ -38,8 +38,7 @@ def _get_ctypes_cdll(src_path):
     """Gets the CDLL object associated with a given source file."""
 
     directory, filename = os.path.split(src_path)
-    #obj_path = os.path.join(directory, '._cimport_.%s.so' % filename)
-    obj_path = os.path.join(directory, '_cimport_.%s.so' % filename)
+    obj_path = os.path.join(directory, '._cimport_.%s.so' % filename)
     # FIXME: AVOID ALWAYS COMPILING
     subprocess.check_output(['gcc', '-shared', '-fPIC', src_path, '-o', obj_path])
     return ctypes.CDLL(obj_path)

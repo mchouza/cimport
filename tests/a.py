@@ -5,5 +5,10 @@ import c
 import b
 import d.a
 import d.b
-print b.foo()
-print d.a.foo()
+b.foo()
+try:
+	print d.a.foo()
+	assert 0
+except AttributeError:
+	pass
+assert d.a.bar() == 42

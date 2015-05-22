@@ -11,7 +11,7 @@ def _get_imp_funcs(c_fpath):
     """Gets the functions that can be imported from a C file."""
 
     # gets the path of the fake system headers
-    fsh_path = os.path.join(__path__[0], 'fake_libc_include')
+    fsh_path = os.path.join(__path__[0], 'pycparser', 'fake_libc_include')
 
     # TODO: USE THE cpp.py MODULE TO PREPROCESS THE FILE
 
